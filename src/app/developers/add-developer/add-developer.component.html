@@ -1,0 +1,133 @@
+<p>register works!</p>
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<title>DCX Developer Directory</title>
+
+		<style>
+			#map {
+				width: 400px;
+				height: 250px;
+				float: left;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<div id="container">
+			<header>
+				<h1><span class="blueText">DCX</span> Developer Directory</h1>
+				<h2>Find A Developer <span class="whiteText">NOW</span></h2>
+			</header>
+
+		<nav id="menu">
+			<ul>
+				<li class="menuitem"><a href="index.html">Home</a></li>
+				<li class="menuitem"><a href="about.html">About Us</a></li>
+				<li class="menuitem"><a href="browse.html">Browse Developers</a></li>
+				<li class="menuitem"><a href="register.html">Register As Developer</a></li>
+				<li class="menuitem"><a href="contact.html">Contact Us</a></li>
+        <li><a routerLink='/login'>Logout</a></li>
+			</ul>
+		</nav>
+
+		<nav id="leftMenu">
+			<h3>Links</h3>
+			<ul>
+				<li><a href="browse.html">SEO</a></li>
+				<li><a href="browse.html">PHP</a></li>
+				<li><a href="browse.html">Ajax</a></li>
+				<li><a href="browse.html">jQuery</a></li>
+				<li><a href="browse.html">Web design</a></li>
+				<li><a href="browse.html">Web Programming</a></li>
+				<li><a href="browse.html">Content Creation</a></li>
+				<li><a href="browse.html">Internet Marketing</a></li>
+				<li><a href="browse.html">XHTML Templates</a></li>
+			</ul>
+		</nav>
+
+		<section>
+      <div *ngIf="!message">
+			<h3>Register As A Developer</h3>
+			<div>Please use this form to contact a member of our website team</div>
+
+			<!-- <form method="post" action="somescript.php"> -->
+				<!-- <p>
+					<label for="firstName">First Name:</label>
+					<input type="text" name="firstName" required>
+				</p>
+				<p>
+					<label for="lastName">Last Name:</label>
+					<input type="text" name="lastName" required>
+				</p>
+				<p>
+					<label for="email">Email:</label>
+					<input type="email" name="email" required>
+				</p> -->
+
+        <form [formGroup]="developerForm" (ngSubmit)="developerForm.valid && onSubmit()" class="tp-form" style="text-align: center;" autocomplete="off">
+          <mat-form-field >
+
+            <mat-label>Full Name</mat-label>
+            <input matInput formControlName='full_name' pattern="[A-Za-z\s]+" [(ngModel)]=developers.full_name placeholder="Enter your full name">
+            <mat-error *ngIf="developerForm.get('full_name').errors?.required">Full Name is Required</mat-error>
+            <mat-error *ngIf="developerForm.get('full_name').errors?.minlength">Full Name must be at least 5 characters</mat-error>
+            <mat-error *ngIf="developerForm.get('full_name').errors?.maxlength">Full Name should not have more than 30 characters</mat-error>
+            <mat-error *ngIf="developerForm.get('full_name').errors?.pattern">Numbers and Special characters are not allowed</mat-error>
+          </mat-form-field>
+          <br>
+
+          <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput formControlName='email' [(ngModel)]=developers.email placeholder="Enter your email">
+            <mat-error *ngIf="developerForm.get('email').errors?.required">Email is Required</mat-error>
+            <mat-error *ngIf="developerForm.get('email').errors?.pattern">Email is invalid</mat-error>
+          </mat-form-field>
+          <br>
+
+          <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input matInput type="password" formControlName='password' [(ngModel)]=developers.password pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$]).{8,}" placeholder="Enter your password">
+            <mat-error *ngIf="developerForm.get('password').errors?.required">Password is Required</mat-error>
+            <!-- <mat-error *ngIf="changePassword.get('new').errors?.minlength">It should contain alteast 8 characters</mat-error> -->
+            <mat-error *ngIf="developerForm.get('password').errors?.pattern">Must contain at least one number and one uppercase and lowercase letter and Special charaters<br></mat-error>
+          </mat-form-field>
+          <br>
+
+          <mat-form-field>
+            <mat-label>Group</mat-label>
+            <select matNativeControl formControlName='group' [(ngModel)]=developers.group>
+              <option *ngFor='let name of group' [value]="name">{{name}}</option>
+            </select>
+            <mat-error *ngIf="developerForm.get('group').errors?.required">You must make a selection</mat-error>
+          </mat-form-field>
+          <br>
+
+          <button type="submit" mat-raised-button class="btn-color" 	[disabled]="developerForm.pristine || developerForm.invalid">Submit</button>
+         <div align="center"><h4 style="color:blue;" *ngIf="message1" align="center">{{message1}}</h4></div><br>
+      <button type="reset" mat-raised-button routerLink="/dashboard">Go Back</button>
+        </form>
+      </div><br>
+      <div *ngIf="message" align="center">
+        <h3>Added Developer Successfully!</h3>
+        <button type="reset" mat-raised-button routerLink="/dashboard">Go Back</button>
+      </div >
+
+
+	</section>
+
+	</div>
+	<div style="clear:both"></div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+	<footer>
+		Copyright 2017. DCX Developer Directory.
+	</footer>
+	</body>
+</html>
+
