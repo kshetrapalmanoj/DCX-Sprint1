@@ -25,7 +25,6 @@ export class DashboardComponent implements OnInit {
     )
   }
 
-
   angForm: FormGroup;
 
   createForm() {
@@ -33,22 +32,6 @@ export class DashboardComponent implements OnInit {
       name: ['', Validators.required ],//formControlNames name and email
       email: ['', Validators.required ],
    });
- }
- getMessage()
- {
-   return this.messageservice.messages;
- }
- done()
- {
-   console.log(this.angForm.value);
-   this.messageservice.addMessage('Data Submitted')
- }
- reset()
- {
-   this.messageservice.clear()
-
-   this.messageservice.addMessage('Just cleared the message')
-   console.log('Cleared all the messages')
  }
   ngOnInit(): void {
     // this.messageservice.addMessage('Welcome to Home Page');

@@ -16,7 +16,7 @@ export class GetDevelopersComponent implements OnInit {
 
   developers:any=[]
 
-  p:number
+  p:number=1
   totalItems:any
 //  itemsPerPage:5
   limit:number=5

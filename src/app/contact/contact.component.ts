@@ -29,8 +29,6 @@ message=false
       color:['',Validators.required]
    });
  }
-
-
  onSubmit(FormData) {
   console.log(FormData)
   this.contact.PostMessage(FormData)
@@ -46,7 +44,6 @@ message=false
 }
 
   ngOnInit(): void {
-    // this.messageservice.addMessage('Welcome to Contact Page');
   }
 
 }

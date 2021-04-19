@@ -14,10 +14,10 @@ export class RegisterComponent implements OnInit {
   lng:any;
   // constructor(){
     location = {};
-    setPosition(position){
-       this.location = position.coords;
-       console.log(position.coords);
-       }
+    // setPosition(position){
+    //    this.location = position.coords;
+    //    console.log(position.coords);
+    //    }
 
 
   angForm: FormGroup;
@@ -33,23 +33,23 @@ export class RegisterComponent implements OnInit {
    });
  }
 
- getMessage()
- {
-   return this.messageservice.messages;
- }
- reset()
- {
-this.messageservice.clear()
+//  getMessage()
+//  {
+//    return this.messageservice.messages;
+//  }
+//  reset()
+//  {
+// this.messageservice.clear()
 
-this.messageservice.addMessage('Just cleared the message')
-console.log('Cleared all the messages')
- }
+// this.messageservice.addMessage('Just cleared the message')
+// console.log('Cleared all the messages')
+//  }
 
- done()
- {
-  console.log(this.angForm.value);
-  this.messageservice.addMessage('Form submitted')
- }
+//  done()
+//  {
+//   console.log(this.angForm.value);
+//   this.messageservice.addMessage('Form submitted')
+//  }
 
  ngOnInit(): void {
 //   if(navigator.geolocation){

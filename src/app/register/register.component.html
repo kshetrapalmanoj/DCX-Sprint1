@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<!-- <link rel="stylesheet" href="css/style.css" type="text/css"/> -->
+
 		<title>DCX Developer Directory</title>
 
 		<style>
@@ -27,7 +27,7 @@
 			<ul>
 				<li class="menuitem"><a href="index.html">Home</a></li>
 				<li class="menuitem"><a href="about">About Us</a></li>
-				<li class="menuitem"><a href="browse.html">Browse Developers</a></li>
+				<li class="menuitem"><a href="browse">Browse Developers</a></li>
 				<li class="menuitem"><a href="register">Register As Developer</a></li>
 				<li class="menuitem"><a href="contact">Contact Us</a></li>
 			</ul>
@@ -36,34 +36,22 @@
 		<nav id="leftMenu">
 			<h3>Links</h3>
 			<ul>
-				<li><a href="browse.html">SEO</a></li>
-				<li><a href="browse.html">PHP</a></li>
-				<li><a href="browse.html">Ajax</a></li>
-				<li><a href="browse.html">jQuery</a></li>
-				<li><a href="browse.html">Web design</a></li>
-				<li><a href="browse.html">Web Programming</a></li>
-				<li><a href="browse.html">Content Creation</a></li>
-				<li><a href="browse.html">Internet Marketing</a></li>
-				<li><a href="browse.html">XHTML Templates</a></li>
+				<li><a href="browse">SEO</a></li>
+				<li><a href="browse">PHP</a></li>
+				<li><a href="browse">Ajax</a></li>
+				<li><a href="browse">jQuery</a></li>
+				<li><a href="browse">Web design</a></li>
+				<li><a href="browse">Web Programming</a></li>
+				<li><a href="browse">Content Creation</a></li>
+				<li><a href="browse">Internet Marketing</a></li>
+				<li><a href="browse">XHTML Templates</a></li>
 			</ul>
 		</nav>
 
 		<section>
 			<h3>Register As A Developer</h3>
 			<p>Please use this form to contact a member of our website team</p>
-			<!-- <form method="post" action="somescript.php"> -->
-				<!-- <p>
-					<label for="firstName">First Name:</label>
-					<input type="text" name="firstName" required>
-				</p>
-				<p>
-					<label for="lastName">Last Name:</label>
-					<input type="text" name="lastName" required>
-				</p>
-				<p>
-					<label for="email">Email:</label>
-					<input type="email" name="email" required>
-				</p> -->
+
         <div class="form-group" ></div>
 				<form method="post" action="home.html" [formGroup]="angForm">
 					<div class="form-group">
@@ -95,12 +83,7 @@
 						  Email is required.
 						</div>
 					</div><br>
-				<!-- <p>
-					<label for="location">Location:</label>
-					<div id="map"></div> -->
 
-				<!-- </p> -->
-				<!-- <div style="clear:both;"></div> -->
         <div class="form-group">
           <label>Upload Profile:</label>
           <input class="form-control" formControlName="upload" type="file">
@@ -110,20 +93,9 @@
             Choose a file to upload.
           </div>
         </div><br>
-					 <!-- <label for="profile" required>Upload Profile:</label> -->
-					 <!-- <form action="/index.html"> -->
-						<!-- <input type="file" id="myFile" name="filename"> -->
-						<!-- <input type="submit" [disabled]="angForm.pristine || angForm.invalid" class="btn btn-success" > -->
+
 					  </form>
-				<!-- </p> -->
-				<div *ngIf="getMessage()">
-					<h3>Messages</h3>
-					<p *ngFor="let message of getMessage()">{{message}}</p>
-				<p>
-					<input type="submit" value="Register"  (click)="done()" [disabled]="angForm.pristine || angForm.invalid" class="btn btn-success">
-				</p>
-				<p><input type="reset" (click)="reset()" value="Reset" class="btn btn-warning"></p>
-				</div>
+
 
 			<br />
 
