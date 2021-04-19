@@ -14,7 +14,7 @@ export class AuthGuardService implements CanActivate {
 
       if (expectedRole !== data.full_name.group) {
         // console.log(data)
-        this.snack.open('You are not allowed to acess this page!','Ok')
+        this.snack.open('You are already a registered developer!','Ok')
         this.router.navigate(['dashboard']);
         return false;
       } else {

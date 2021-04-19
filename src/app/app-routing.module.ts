@@ -14,21 +14,21 @@ import { AuthGuardService } from './auth-guard.service';
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'about.html', component: AboutComponent,
+  { path: 'about', component: AboutComponent,
     children: [ ]
   },
   { path: 'login', component: LoginComponent },
-  { path: 'browse.html/:no', component: GetDevelopersComponent,canActivate: [AuthGuardService], data: { expectedRole: 'Admin' },
+  { path: 'browse/:no', component: GetDevelopersComponent,
     children: [
       { path: ':no', component: GetDevelopersComponent },]
   },
-  { path: 'contact.html', component: ContactComponent,
+  { path: 'contact', component: ContactComponent,
     children: [ ]
   },
-  { path: 'info.html', component: InfoComponent,canActivate: [AuthGuardService], data: { expectedRole: 'Admin' },
+  { path: 'info', component: InfoComponent,canActivate: [AuthGuardService], data: { expectedRole: 'Admin' },
     children: [ ]
   },
-  { path: 'register.html', component: AddDeveloperComponent},
+  { path: 'register', component: AddDeveloperComponent,canActivate: [AuthGuardService], data: { expectedRole: 'Admin' }},
   {path:'login',component: AddDeveloperComponent },
 
 ]

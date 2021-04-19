@@ -39,7 +39,7 @@ export class GetDevelopersComponent implements OnInit {
   }
 
   getdev(p1){
-  this.router.navigate(['browse.html/'+p1]);
+  this.router.navigate(['browse/'+p1]);
   this.getDevelopers(p1);
   this.p=p1;
 }
