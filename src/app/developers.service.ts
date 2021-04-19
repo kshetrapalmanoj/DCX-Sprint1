@@ -22,8 +22,8 @@ export class DevelopersService {
   }
 
   getDevelopers(offset):Observable<developer[]>{
-    const newurl=`http://localhost:3000/api/developer/register/${offset}`
-    return this.http.get<developer[]>(newurl,this.httpOptions);
+    // newurl=`http://localhost:3000/api/developer/register/${offset}`
+    return this.http.get<developer[]>(`${this.url}/${offset}`,this.httpOptions);
   }
 
   getName():Observable<any>{

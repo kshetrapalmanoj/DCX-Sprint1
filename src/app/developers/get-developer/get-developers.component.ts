@@ -1,7 +1,7 @@
-import {Component, OnInit } from '@angular/core';
-import {DevelopersService} from '../../developers.service';
-import {developer}  from '../../developers';
-import {ActivatedRoute,Router} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { DevelopersService } from '../../developers.service';
+import { developer }  from '../../developers';
+import { ActivatedRoute,Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
 
@@ -16,7 +16,7 @@ export class GetDevelopersComponent implements OnInit {
 
   developers:any=[]
 
-  p:number=1
+  p:number
   totalItems:any
 //  itemsPerPage:5
   limit:number=5

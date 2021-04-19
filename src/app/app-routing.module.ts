@@ -1,6 +1,4 @@
-
 import { AddDeveloperComponent } from './developers/add-developer/add-developer.component';
-import { RegisterComponent } from './register/register.component';
 import { AboutComponent } from './about/about.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -20,7 +18,7 @@ const routes: Routes = [
     children: [ ]
   },
   { path: 'login', component: LoginComponent },
-  { path: 'browse.html', component: GetDevelopersComponent,canActivate: [AuthGuardService], data: { expectedRole: 'Admin' },
+  { path: 'browse.html/:no', component: GetDevelopersComponent,canActivate: [AuthGuardService], data: { expectedRole: 'Admin' },
     children: [
       { path: ':no', component: GetDevelopersComponent },]
   },
@@ -32,8 +30,6 @@ const routes: Routes = [
   },
   { path: 'register.html', component: AddDeveloperComponent},
   {path:'login',component: AddDeveloperComponent },
-
-
 
 ]
 

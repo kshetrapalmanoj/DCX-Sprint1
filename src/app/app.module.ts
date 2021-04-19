@@ -37,10 +37,7 @@ import {MatTabsModule} from '@angular/material/tabs';
     GetDevelopersComponent,
     RegisterComponent,
     ContactComponent,
-    AboutComponent,
-
-
-
+    AboutComponent
   ],
 
   imports: [
@@ -62,8 +59,6 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatTableModule,
     MatSnackBarModule,
     MatTabsModule,
-
-
   ],
   providers: [],
   bootstrap: [AppComponent]

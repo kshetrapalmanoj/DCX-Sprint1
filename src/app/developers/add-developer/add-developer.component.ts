@@ -30,8 +30,6 @@ export class AddDeveloperComponent implements OnInit {
     },error=>{
       this.message = error.error.message;
     },
-
-
     );
 
   }

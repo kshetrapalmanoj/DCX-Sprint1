@@ -5,6 +5,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { LoginComponent } from './login.component';
+import { RouterModule } from '@angular/router';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -13,7 +14,7 @@ describe('LoginComponent', () => {
   beforeEach(() => {
      TestBed.configureTestingModule({
       declarations: [ LoginComponent ],
-      imports:[ReactiveFormsModule,HttpClientModule,RouterTestingModule],
+      imports:[ReactiveFormsModule,HttpClientModule,RouterTestingModule,RouterModule.forRoot([])],
       providers:[AuthLoginService]
     })
     .compileComponents();
