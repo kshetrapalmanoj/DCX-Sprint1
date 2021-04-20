@@ -1,6 +1,6 @@
-const router = require('express').Router();
-const Developer = require('../model/Developer');
-const jwt = require('jsonwebtoken');
+const router = require('express').Router();//global express module
+const Developer = require('../model/Developer');//local module
+const jwt = require('jsonwebtoken');//global
 
 
 router.get('/data',verify,(req,res)=>{

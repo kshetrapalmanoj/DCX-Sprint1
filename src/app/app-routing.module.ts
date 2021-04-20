@@ -10,35 +10,38 @@ import { InfoComponent } from './info/info.component';
 import { GetDevelopersComponent } from './developers/get-developer/get-developers.component';
 import { AuthGuardService } from './auth-guard.service';
 
-
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'about', component: AboutComponent,
-    children: [ ]
-  },
+  { path: 'about', component: AboutComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'browse/:no', component: GetDevelopersComponent,
-    children: [
-      { path: ':no', component: GetDevelopersComponent },]
+  {
+    path: 'browse/:no',
+    component: GetDevelopersComponent,
+    children: [{ path: ':no', component: GetDevelopersComponent }],
   },
-  { path: 'contact', component: ContactComponent,
-    children: [ ]
-  },
-  { path: 'info', component: InfoComponent,canActivate: [AuthGuardService], data: { expectedRole: 'Admin' },
-    children: [ ]
-  },
-  { path: 'register', component: AddDeveloperComponent,canActivate: [AuthGuardService], data: { expectedRole: 'Admin' }},
-  {path:'login',component: AddDeveloperComponent },
+  { path: 'contact', component: ContactComponent },
 
-]
+  {
+    path: 'info',
+    component: InfoComponent,
+    canActivate: [AuthGuardService],
+    data: { expectedRole: 'Admin' },
+  },
+
+  {
+    path: 'register',
+    component: AddDeveloperComponent,
+    canActivate: [AuthGuardService],
+    data: { expectedRole: 'Admin' },
+  },
+
+  { path: 'login', component: AddDeveloperComponent },
+];
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
-    RouterModule.forRoot(routes)
-  ],
-  exports: [RouterModule]
+  imports: [CommonModule, RouterModule.forRoot(routes)],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

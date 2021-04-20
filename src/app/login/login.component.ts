@@ -9,65 +9,96 @@ import { DevelopersService } from '.././developers.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   hide = true;
-  message=""
+  message = '';
 
-  constructor(private fb: FormBuilder, private router: Router, private route: ActivatedRoute, private authService: AuthLoginService,public messageService: MessageService,private developerService:DevelopersService) { }
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private route: ActivatedRoute,
+    private authService: AuthLoginService,
+    public messageService: MessageService,
+    private developerService: DevelopersService
+  ) {}
 
   onSubmit(): void {
+    //checking validity of login form
+
     if (this.loginForm.valid) {
-      this.authService.loginDeveloper(this.loginForm.value).subscribe(result => {
-        console.log("Logged in successfully!")
-        console.log('Result',result);
-        localStorage.setItem('token', result);
-        this.router.navigate(['dashboard']);
-
-      }, error => {
-        this.message = error.error.message;
-        // console.log(error);
-      });
+      this.authService.loginDeveloper(this.loginForm.value).subscribe(
+        (result) => {
+          console.log('Logged in successfully!');
+          console.log('Result', result);
+          localStorage.setItem('token', result);
+          this.router.navigate(['dashboard']); //navigates to dashboard on login
+        },
+        (error) => {
+          this.message = error.error.message;
+          // console.log(error);
+        }
+      );
     }
-
   }
-  developerForm:FormGroup;
-  group=['Developer'];
-  message1=false;
-  submitted:boolean
-  message2=""
 
-  developers:developer={full_name:'',email:'',password:'',group:''};
+  developerForm: FormGroup;
+  group = ['Developer'];
+  message1 = false;
+  submitted: boolean;
+  message2 = '';
 
+  developers: developer = { full_name: '', email: '', password: '', group: '' };
 
-  onSubmit1():void{
-    console.log("Developer Details:",this.developers);
+  onSubmit1(): void {
+    console.log('Developer Details:', this.developers);
 
-    this.developerService.addDevelopers(this.developers).subscribe(data => {
-      console.log(data);
-      this.message1=true;
-      this.message2="Developer Added successfully!"
-    },error=>{
-      this.message = error.error.message;
-    },
+    this.developerService.addDevelopers(this.developers).subscribe(
+      (data) => {
+        console.log(data);
+        this.message1 = true;
+        this.message2 = 'Developer Added successfully!';
+      },
+      (error) => {
+        this.message = error.error.message;
+      }
     );
-
   }
 
   ngOnInit(): void {
+    // Login form under signin mat-tab
     this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.pattern(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/)]],
-      password: ['', [Validators.required]]
-    })
+      email: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/),
+        ],
+      ],
+      password: ['', [Validators.required]],
+    });
 
-    this.developerForm=this.fb.group({
-      full_name:['',[Validators.required,Validators.minLength(5),Validators.maxLength(20)]],
-      email:['',[Validators.required,Validators.pattern(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/)]],
-      password:['',[Validators.required]],
-      group:['',Validators.required]
-    })
+    this.developerForm = this.fb.group({
+      // Register as developer form under signup mat-tab
+      full_name: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(5),
+          Validators.maxLength(20),
+        ],
+      ],
+      email: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/),
+        ],
+      ],
+      password: ['', [Validators.required]],
+      group: ['', Validators.required],
+    });
   }
-
 }

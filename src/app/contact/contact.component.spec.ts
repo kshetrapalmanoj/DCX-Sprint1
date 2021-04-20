@@ -27,4 +27,8 @@ describe('ContactComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should have a defined component', () => {
+    expect(component).toBeDefined();
+  });
 });

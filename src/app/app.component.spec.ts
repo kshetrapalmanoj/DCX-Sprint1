@@ -29,4 +29,5 @@ describe('AppComponent', () => {
   //   const compiled = fixture.nativeElement;
   //   expect(compiled.querySelector('.content span').textContent).toContain('DCX-FINAL app is running!');
   // });
+
 });

@@ -14,7 +14,7 @@ describe('LoginComponent', () => {
   beforeEach(() => {
      TestBed.configureTestingModule({
       declarations: [ LoginComponent ],
-      imports:[ReactiveFormsModule,HttpClientModule,RouterTestingModule,RouterModule.forRoot([])],
+      imports:[ReactiveFormsModule,HttpClientModule,RouterTestingModule],
       providers:[AuthLoginService]
     })
     .compileComponents();
@@ -23,9 +23,12 @@ describe('LoginComponent', () => {
     fixture.detectChanges();
   });
 
-
-
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should have a defined component', () => {
+    expect(component).toBeDefined();
+  });
+
 });

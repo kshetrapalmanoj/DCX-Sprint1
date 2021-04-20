@@ -53,7 +53,7 @@ router.post('/login',async (req,res)=>{
 
     //checks developer exists or not
     const developer = await Developer.findOne({email:req.body.email});
-    if(!developer) return res.status(400).json({message:'Invalid Developer Email'});
+    if(!developer) return res.status(400).json({message:'Invalid Credentials'});
 
     //checking password
     const validPassword = await bcrypt.compare(req.body.password,developer.password);

@@ -8,19 +8,23 @@ import { DevelopersService } from './developers.service';
 })
 export class AuthGuardService implements CanActivate {
   constructor(private router: Router, private developerService: DevelopersService, private snack: MatSnackBar) { }
-  canActivate(route: ActivatedRouteSnapshot): boolean {
+  canActivate(route: ActivatedRouteSnapshot): boolean
+   {
+
     const expectedRole = route.data.expectedRole;
     this.developerService.getName().subscribe((data) => {
 
-      if (expectedRole !== data.full_name.group) {
-        // console.log(data)
+       if (expectedRole !== data.full_name.group)
+       { // console.log(data)
         this.snack.open('You are already a registered developer!','Ok')
         this.router.navigate(['dashboard']);
         return false;
-      } else {
+       }
+       else
+       {
         return true;
-      }
-    })
+       }
+     })
     return true;
-  }
+   }
 }

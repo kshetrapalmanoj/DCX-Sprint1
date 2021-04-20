@@ -1,133 +1,132 @@
 <p>home works!</p>
 <!DOCTYPE html>
 <html manifest="developer.manifest">
-  <head>
 
-    <title>DCX Developer Directory</title>
+<head>
 
-  </head>
+  <title>DCX Developer Directory</title>
 
-  <body>
-    <div id="container">
-      <header>
-        <h1><span class="blueText">DCX</span> Developer Directory</h1>
-        <h2>Find A Developer <span class="whiteText">NOW</span></h2>
-      </header>
+</head>
 
-      <nav id="menu">
+<body>
+  <div id="container">
+    <header>
+      <h1><span class="blueText">DCX</span> Developer Directory</h1>
+      <h2>Find A Developer <span class="whiteText">NOW</span></h2>
+    </header>
+
+    <nav id="menu">
+      <ul>
+        <li class="menuitem"><a href="dashboard" routerLink="/dashboard">Home</a></li>
+        <li class="menuitem"><a href="about" routerLink="/about">About Us</a></li>
+        <li class="menuitem"><a href="browse/:no" routerLink="/browse/:no">Browse Developers</a></li>
+        <li class="menuitem">
+          <a href="register" routerLink="/register">Register As Developer</a>
+        </li>
+        <li class="menuitem"><a href="contact" routerLink="/contact">Contact Us</a></li>
+        <li class="menuitem"><a href="login" (click)="logout()">Logout</a></li>
+      </ul>
+
+
+      <div id="displayName">
+
+      </div>
+
+    </nav>
+    <aside>
+      <nav id="leftMenu">
+        <h3>Links</h3>
         <ul>
-          <li class="menuitem"><a href="index.html" routerLink="/dashboard">Home</a></li>
-          <li class="menuitem"><a href="about" routerLink="/about">About Us</a></li>
-          <li class="menuitem"><a href="browse/:no"  routerLink="/browse/:no">Browse Developers</a></li>
-          <li class="menuitem">
-            <a href="register" routerLink="/register">Register As Developer</a>
-          </li>
-          <li class="menuitem"><a href="contact"  routerLink="/contact">Contact Us</a></li>
-          <li><a routerLink='/login'>Logout</a>
+          <li><a href="browse/:no">SEO</a></li>
+          <li><a href="browse/:no">PHP</a></li>
+          <li><a href="browse/:no">Ajax</a></li>
+          <li><a href="browse/:no">jQuery</a></li>
+          <li><a href="browse/:no">Web design</a></li>
+          <li><a href="browse/:no">Web Programming</a></li>
+          <li><a href="browse/:no">Content Creation</a></li>
+          <li><a href="browse/:no">Internet Marketing</a></li>
+          <li><a href="browse/:no">XHTML Templates</a></li>
         </ul>
 
-
-        <div id="displayName">
-
-        </div>
-
       </nav>
-      <aside>
-        <nav id="leftMenu">
-          <h3>Links</h3>
-          <ul>
-            <li><a href="browse/:no">SEO</a></li>
-            <li><a href="browse/:no">PHP</a></li>
-            <li><a href="browse/:no">Ajax</a></li>
-            <li><a href="browse/:no">jQuery</a></li>
-            <li><a href="browse/:no">Web design</a></li>
-            <li><a href="browse/:no">Web Programming</a></li>
-            <li><a href="browse/:no">Content Creation</a></li>
-            <li><a href="browse/:no">Internet Marketing</a></li>
-            <li><a href="browse/:no">XHTML Templates</a></li>
-          </ul>
+    </aside>
 
-        </nav>
-      </aside>
+    <section>
+      <h2>Welcome to DCX Developer Directory!</h2>
+      <img class="float" src="/assets/images/web.jpg" alt="web developer directory" />
+      <h3>Who Are We?</h3>
+      <p>
+        We are a fictional website and service that list top web developers
+        around the world. Search and browse fictional web developers on our
+        website absolutley FREE!
+      </p>
+      <h3>What Skills Do Our Developers Have?</h3>
+      <p>
+        Our listed fictional web developers skill ranges from Graphic design
+        with Photoshop, Illustrator and Fireworks to markup languages like
+        HTML5, XHTML and XML to programming languages such as Javascript, PHP,
+        Python and ASP
+      </p>
+    </section>
 
-      <section>
-        <h2>Welcome to DCX Developer Directory!</h2>
-        <img class="float" src="/assets/images/web.jpg" alt="web developer directory" />
-        <h3>Who Are We?</h3>
-        <p>
-          We are a fictional website and service that list top web developers
-          around the world. Search and browse fictional web developers on our
-          website absolutley FREE!
-        </p>
-        <h3>What Skills Do Our Developers Have?</h3>
-        <p>
-          Our listed fictional web developers skill ranges from Graphic design
-          with Photoshop, Illustrator and Fireworks to markup languages like
-          HTML5, XHTML and XML to programming languages such as Javascript, PHP,
-          Python and ASP
-        </p>
-      </section>
+    <section>
+      <h2>Latest DCX Developers</h2>
+      <div class="developer">
+        <h4>Adam Sullivan</h4>
+        <ul>
+          <li><strong>Location: </strong> Boston USA</li>
+          <li><strong>Skills: </strong> HTML/CSS, PHP, ROR</li>
+          <li><strong>Availability:</strong> Full-Time</li>
+        </ul>
 
-      <section>
-        <h2>Latest DCX Developers</h2>
-        <div class="developer">
-          <h4>Adam Sullivan</h4>
-          <ul>
-            <li><strong>Location: </strong> Boston USA</li>
-            <li><strong>Skills: </strong> HTML/CSS, PHP, ROR</li>
-            <li><strong>Availability:</strong> Full-Time</li>
-          </ul>
+        <a href="#">View Profile</a>
+      </div>
 
-          <a href="#">View Profile</a>
-        </div>
+      <div class="developer">
+        <h4>Rick Monroe</h4>
+        <ul>
+          <li><strong>Location: </strong> Boston USA</li>
+          <li><strong>Skills: </strong> HTML/CSS, PHP, ROR</li>
+          <li><strong>Availability:</strong> Full-Time</li>
+        </ul>
 
-        <div class="developer">
-          <h4>Rick Monroe</h4>
-          <ul>
-            <li><strong>Location: </strong> Boston USA</li>
-            <li><strong>Skills: </strong> HTML/CSS, PHP, ROR</li>
-            <li><strong>Availability:</strong> Full-Time</li>
-          </ul>
+        <a href="#">View Profile</a>
+      </div>
 
-          <a href="#">View Profile</a>
-        </div>
+      <div class="developer">
+        <h4>Michael Oliver</h4>
+        <ul>
+          <li><strong>Location: </strong> Boston USA</li>
+          <li><strong>Skills: </strong> HTML/CSS, PHP, ROR</li>
+          <li><strong>Availability:</strong> Full-Time</li>
+        </ul>
 
-        <div class="developer">
-          <h4>Michael Oliver</h4>
-          <ul>
-            <li><strong>Location: </strong> Boston USA</li>
-            <li><strong>Skills: </strong> HTML/CSS, PHP, ROR</li>
-            <li><strong>Availability:</strong> Full-Time</li>
-          </ul>
+        <a href="#">View Profile</a>
+      </div>
 
-          <a href="#">View Profile</a>
-        </div>
+      <div class="developer">
+        <h4>Megan Jennings</h4>
+        <ul>
+          <li><strong>Location: </strong> Boston USA</li>
+          <li><strong>Skills: </strong> HTML/CSS, PHP, ROR</li>
+          <li><strong>Availability:</strong> Full-Time</li>
+        </ul>
 
-        <div class="developer">
-          <h4>Megan Jennings</h4>
-          <ul>
-            <li><strong>Location: </strong> Boston USA</li>
-            <li><strong>Skills: </strong> HTML/CSS, PHP, ROR</li>
-            <li><strong>Availability:</strong> Full-Time</li>
-          </ul>
+        <a href="#">View Profile</a>
+      </div>
+      <br>
+    </section>
+  </div>
 
-          <a href="#">View Profile</a>
-        </div>
-        <br>
-      </section>
-    </div>
-
-    <div style="clear: both"></div>
+  <div style="clear: both"></div>
 
 
 
 
-    <footer>
-      Copyright 2017. DCX Developer Directory -
-      <a href="info" style="color: #ffffff">Info </a>
-    </footer>
-  </body>
+  <footer>
+    Copyright 2017. DCX Developer Directory -
+    <a href="info" style="color: #ffffff">Info </a>
+  </footer>
+</body>
+
 </html>
-
-
-
