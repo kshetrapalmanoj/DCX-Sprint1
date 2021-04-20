@@ -13,8 +13,8 @@ export class DevelopersService {
 
   constructor(private http: HttpClient) {}
 
-  url = 'http://localhost:3000/api/developer/register';
-  urlInfo = 'http://localhost:3000/verify/data';
+  url = 'https://dcx-app-server.herokuapp.com/api/developer/register';
+  urlInfo = 'https://dcx-app-server.herokuapp.com/verify/data';
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
   };
