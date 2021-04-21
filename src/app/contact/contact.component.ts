@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { MessageService } from './../../message.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
@@ -22,6 +23,7 @@ export class ContactComponent implements OnInit {
     //dependency injection
     this.createForm();
   }
+  
   createForm() {
     //function to create form angForm for contact
     this.angForm = this.fb.group({
@@ -36,6 +38,11 @@ export class ContactComponent implements OnInit {
       color: ['', Validators.required],
     });
   }
+   logout() {
+    localStorage.removeItem('token');
+    this.router.navigate(['login']);
+  }
+
   onSubmit(FormData) {
     //function called in html when developer submits form data
     console.log(FormData);
