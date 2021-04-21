@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { from, Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -8,7 +9,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   export class AuthLoginService
   {
     constructor(private http: HttpClient) {}
-      url = 'http://localhost:3000/api/developer/login';
+      url = `${environment.hostUrl}/api/developer/login`;
       head = { headers: new HttpHeaders({ 'Content-Type': 'application/json' })};
         loginDeveloper(data): Observable<any>
           {
